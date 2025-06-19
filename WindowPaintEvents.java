@@ -14,7 +14,7 @@ public class WindowPaintEvents extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(true);
-        setTitle("Main Window");
+        setTitle("Jogo Java");
         pa = new PaintArea();
         getContentPane().add(pa, BorderLayout.CENTER);
         setVisible(true);

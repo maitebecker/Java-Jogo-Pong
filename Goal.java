@@ -7,11 +7,10 @@ public class Goal extends GEOForm {
     public static final int WIDTH = 15;
     public static final int HEIGHT = 400;
 
-    public Goal(int x, int y){
-        this.x = x;
-        this.y = y;
+    public Goal() {
+
     }
-    
+
     @Override
     public void draw(Graphics g) {
         g.setColor(Color.WHITE);
@@ -22,7 +21,7 @@ public class Goal extends GEOForm {
         this.x = x;
         this.y = y;
     }
-    
+
     @Override
     public Rectangle getBounds() {
         return new Rectangle(x, y, WIDTH, HEIGHT);
