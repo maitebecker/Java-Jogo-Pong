@@ -11,6 +11,7 @@ import java.awt.event.KeyListener;
 public class PaintArea extends JPanel {
     private static final int TIMER_DELAY = 15;
 
+    // Objetos principais do jogo
     private Ball ball = new Ball(80, 60, 30);
     private Goal goal1 = new Goal();
     private Goal goal2 = new Goal();
@@ -44,7 +45,7 @@ public class PaintArea extends JPanel {
 
     Timer t = new Timer(TIMER_DELAY, (ActionEvent e) -> {
         ball.move(getWidth(), getHeight());
-         player1.move(getHeight());
+        player1.move(getHeight());
         player2.move(getHeight());
         checkCollisions();
         repaint();
@@ -88,7 +89,7 @@ public class PaintArea extends JPanel {
             g.fillRect(getWidth() / 2 - 2, i, 4, 15);
         }
 
-        // Desenhar componentes
+        // Desenha os objetos do jogo (goleiras, jogadores, bola)
         for (GEOForm gf : sprites) {
             gf.draw(g);
         }

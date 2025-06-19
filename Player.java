@@ -34,12 +34,12 @@ public class Player extends GEOForm {
     public void move(int panelHeight) {
         int newY = y + (dy * speedY);
         if (newY >= 0 && newY <= panelHeight - HEIGHT) {
-            y = newY;
+            y = newY; // atualiza se estiver dentro da tela
         }
     }
 
     public void setYGrow(boolean grow) {
-        this.dy = grow ? 1 : -1;
+        this.dy = grow ? 1 : -1; // Define a direção do movimento vertical: true = desce, false = sobe
     }
 
     public void processKeyUp(KeyEvent ke, int panelHeight) {
@@ -56,7 +56,7 @@ public class Player extends GEOForm {
     public void processKeyDown(KeyEvent ke, int panelHeight) {
         if ((numPlayer == 1 && ke.getKeyCode() == KeyEvent.VK_W)
                 || (numPlayer == 2 && ke.getKeyCode() == KeyEvent.VK_O)) {
-            setYGrow(false);
+            setYGrow(false); 
         }
         if ((numPlayer == 1 && ke.getKeyCode() == KeyEvent.VK_S)
                 || (numPlayer == 2 && ke.getKeyCode() == KeyEvent.VK_L)) {

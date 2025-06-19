@@ -14,10 +14,6 @@ public class Ball extends GEOForm {
         this.size = size;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     @Override
     public void draw(Graphics g) {
         g.setColor(Color.WHITE);
@@ -25,8 +21,8 @@ public class Ball extends GEOForm {
     }
 
     public void move(int panelWidth, int panelHeight) {
-        x += speedX * dx; // Se dx = 1, ela soma +speedX e vai pra direita.
-        y += speedY * dy; // Se dx = -1, ela subtrai e vai pra esquerda.
+        x += speedX * dx; /// dx = 1 → direita; dx = -1 → esquerda
+        y += speedY * dy; // dy = 1 → baixo; dy = -1 → cima
 
         if (x <= 0 || x >= panelWidth - size) // Se a bola ultrapassar o limite do painel, muda de direção
             dx *= -1;
@@ -35,12 +31,11 @@ public class Ball extends GEOForm {
     }
 
     public void setXGrow(boolean grow) {
-        this.dx = grow ? 1 : -1;
+        this.dx = grow ? 1 : -1; // true → direita, false → esquerda
     }
 
-    // Se a bola bate mais em cima do jogador, newDY é negativo → bola sobe.
     public void setYGrow(double newDY) {
-        this.dy = newDY > 0 ? 1 : -1;
+        this.dy = newDY > 0 ? 1 : -1; // se bateu abaixo do centro, desce; se acima, sobe
     }
 
     @Override
